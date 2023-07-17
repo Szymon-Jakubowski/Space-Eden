@@ -1,10 +1,16 @@
 using Mirror;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class NetworkManagerEden : NetworkManager
 {
     // Overrides the base singleton so we don't
     // have to cast to this type everywhere.
     public static new NetworkManagerEden singleton { get; private set; }
+    
+    [Header("=== Scenes ===")]
+    [Scene] [SerializeField]
+    private List<string> menuScenes = new List<string>();
 
     /// <summary>
     /// Runs on both Server and Client
