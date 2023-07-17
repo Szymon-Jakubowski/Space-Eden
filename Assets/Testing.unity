@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.7
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0005450964, g: 0.0028865596, b: 0.013993587, a: 0.7}
+  m_IndirectSpecularColor: {r: 0.006850425, g: 0.03715372, b: 0.123665996, a: 0.7}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -476,8 +476,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 18
+  m_Intensity: 13
+  m_Range: 18.02
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -611,7 +611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4fd4af4a24e001448bba31d28cf57c6e, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4fd4af4a24e001448bba31d28cf57c6e, type: 3}
       propertyPath: m_TagString
@@ -705,7 +705,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 45099139}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -940,11 +940,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
+  m_NoiseProfile: {fileID: 0}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0.5
-  m_FrequencyGain: 0.3
-  mNoiseOffsets: {x: -292.83057, y: -694.5305, z: -341.5011}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &1880115759
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -960,13 +960,13 @@ MonoBehaviour:
   Damping: {x: 0, y: 0, z: 0}
   ShoulderOffset: {x: 0, y: 0, z: 0}
   VerticalArmLength: 0
-  CameraSide: 0.6
+  CameraSide: 0
   CameraDistance: 0
   CameraCollisionFilter:
     serializedVersion: 2
-    m_Bits: 1
-  IgnoreTag: Player
-  CameraRadius: 0.15
+    m_Bits: 0
+  IgnoreTag: 
+  CameraRadius: 0.001
   DampingIntoCollision: 0
   DampingFromCollision: 0
 --- !u!114 &1880115760
@@ -988,9 +988,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6785936977537006871, guid: 61c489b84ceafa54f813934215cda1cc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785936978077908276, guid: 61c489b84ceafa54f813934215cda1cc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6785936978306665330, guid: 61c489b84ceafa54f813934215cda1cc, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785936978306665330, guid: 61c489b84ceafa54f813934215cda1cc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785936978306665331, guid: 61c489b84ceafa54f813934215cda1cc, type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 129
       objectReference: {fileID: 0}
     - target: {fileID: 6785936978306665342, guid: 61c489b84ceafa54f813934215cda1cc, type: 3}
       propertyPath: m_RootOrder
