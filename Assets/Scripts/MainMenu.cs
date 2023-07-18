@@ -46,10 +46,11 @@ public class MainMenu : MonoBehaviour
 
         if (ushort.TryParse(portAdressHost.text, out var port))
         {
-            NetworkManager.singleton.StartHost();
             NetworkManager.singleton.networkAddress = ipAdressHost.text;
             NetworkManager.singleton.gameObject.GetComponent<KcpTransport>().Port = port;
             NetworkManager.singleton.playerPrefab.name = nameInput.text;
+
+            NetworkManager.singleton.StartHost();
         }
         else
         {
@@ -66,10 +67,11 @@ public class MainMenu : MonoBehaviour
 
         if (ushort.TryParse(portAdressClient.text, out var port))
         {
-            NetworkManager.singleton.StartClient();
             NetworkManager.singleton.networkAddress = ipAdressClient.text;
             NetworkManager.singleton.gameObject.GetComponent<KcpTransport>().Port = port;
             NetworkManager.singleton.playerPrefab.name = nameInput.text;
+
+            NetworkManager.singleton.StartClient();
         }
         else
         {
