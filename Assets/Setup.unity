@@ -518,7 +518,7 @@ MonoBehaviour:
   networkAddress: localhost
   maxConnections: 100
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 6785936978306665330, guid: 61c489b84ceafa54f813934215cda1cc, type: 3}
+  playerPrefab: {fileID: 6785936978306665330, guid: 6c7c9b69d8f201c4fbbf730d16cb1299, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
@@ -537,6 +537,7 @@ MonoBehaviour:
   lobbyScene: Assets/Lobby.unity
   gameScene: Assets/Game.unity
   lobbyPlayerPrefab: {fileID: 6785936978306665330, guid: 6c7c9b69d8f201c4fbbf730d16cb1299, type: 3}
+  minPlayers: 2
 --- !u!1 &1661772827
 GameObject:
   m_ObjectHideFlags: 0

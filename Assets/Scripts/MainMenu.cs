@@ -6,6 +6,8 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
+    private readonly NetworkManagerEden NetMng = NetworkManagerEden.Singleton;
+
     [SerializeField]
     private GameObject hostPanel;
     [SerializeField]
@@ -39,18 +41,17 @@ public class MainMenu : MonoBehaviour
 
     public void StartHost()
     {
-        if (nameInput.text.Length == 0)
-        {
-            nameInput.text = "Player";
-        }
+        if (string.IsNullOrEmpty(nameInput.text)) nameInput.text = "Player";
+        if (string.IsNullOrEmpty(ipAdressHost.text)) ipAdressHost.text = "localhost";
+        if (string.IsNullOrEmpty(portAdressHost.text)) portAdressHost.text = "7777";
 
         if (ushort.TryParse(portAdressHost.text, out var port))
         {
-            NetworkManager.singleton.networkAddress = ipAdressHost.text;
-            NetworkManager.singleton.gameObject.GetComponent<KcpTransport>().Port = port;
-            NetworkManager.singleton.playerPrefab.name = nameInput.text;
+            NetMng.networkAddress = ipAdressHost.text;
+            NetMng.gameObject.GetComponent<KcpTransport>().Port = port;
+            NetMng.lobbyPlayerPrefab.GetComponent<NetworkLobbyPlayer>().DisplayName = nameInput.text;
 
-            NetworkManager.singleton.StartHost();
+            NetMng.StartHost();
         }
         else
         {
@@ -60,18 +61,17 @@ public class MainMenu : MonoBehaviour
 
     public void StartClient()
     {
-        if (nameInput.text.Length == 0)
-        {
-            nameInput.text = "Player";
-        }
+        if (string.IsNullOrEmpty(nameInput.text)) nameInput.text = "Player";
+        if (string.IsNullOrEmpty(ipAdressHost.text)) ipAdressHost.text = "localhost";
+        if (string.IsNullOrEmpty(portAdressHost.text)) portAdressHost.text = "7777";
 
         if (ushort.TryParse(portAdressClient.text, out var port))
         {
-            NetworkManager.singleton.networkAddress = ipAdressClient.text;
-            NetworkManager.singleton.gameObject.GetComponent<KcpTransport>().Port = port;
-            NetworkManager.singleton.playerPrefab.name = nameInput.text;
+            NetMng.networkAddress = ipAdressClient.text;
+            NetMng.gameObject.GetComponent<KcpTransport>().Port = port;
+            NetMng.lobbyPlayerPrefab.GetComponent<NetworkLobbyPlayer>().DisplayName = nameInput.text;
 
-            NetworkManager.singleton.StartClient();
+            NetMng.StartClient();
         }
         else
         {
